@@ -1,0 +1,23 @@
+{
+  "name": "react-recipes",
+  "version": "1.0.0",
+  "description": "React Recipes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meerajahmed/react-recipes.git"
+  },
+  "keywords": [
+    "react",
+    "recipes"
+  ],
+  "author": "Meeraj Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meerajahmed/react-recipes/issues"
+  },
+  "homepage": "https://github.com/meerajahmed/react-recipes#readme"
+}
