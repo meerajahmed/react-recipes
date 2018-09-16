@@ -4,7 +4,8 @@
   "description": "React Recipes",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "build": "babel ./index.js -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/meerajahmed/react-recipes/issues"
   },
-  "homepage": "https://github.com/meerajahmed/react-recipes#readme"
+  "homepage": "https://github.com/meerajahmed/react-recipes#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
 }
