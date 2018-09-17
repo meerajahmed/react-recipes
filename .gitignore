@@ -62,3 +62,6 @@ typings/
 
 # webstrom
 .idea
+
+# build files
+dist/
