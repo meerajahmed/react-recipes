@@ -1,3 +1,11 @@
-/**
- * Created by meeahmed on 9/23/2018.
- */
+import React from "react";
+
+const Header = () => (
+  <div>
+    <header>
+      <h1>My Recipes</h1>
+    </header>
+  </div>
+);
+
+export default Header;
