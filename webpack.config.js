@@ -1,10 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+
+require('dotenv').config();
 
 module.exports = {
   "mode": "development",
   "context": path.join(__dirname, 'src'),
-  "entry": "./index.js",
+  "entry": ['whatwg-fetch', "./index.js"],
   "output": {
     "path": path.join(__dirname, 'dist'),
     "filename": "[name].[chunkhash:8].js"
@@ -41,6 +44,9 @@ module.exports = {
       filename: 'index.html',
       template: './index.html',
       favicon: './favicon.png'
+    }),
+    new webpack.DefinePlugin({
+      API_URL: JSON.stringify(process.env.API_URL)
     })
   ]
 };
