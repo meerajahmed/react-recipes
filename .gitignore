@@ -63,5 +63,9 @@ typings/
 # webstrom
 .idea
 
+# vscode
+.vscode/
+
+
 # build files
 dist/
