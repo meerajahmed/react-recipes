@@ -33,8 +33,9 @@ module.exports = {
       {
         "test": /\.css$/,
         "use": [
-          "style-loader",
-          "css-loader"
+          "style-loader", // 3. load styles in HTML head tag
+          "css-loader", // 2. load styles using require
+          "postcss-loader" // 1. convert cssNex to normal css using config postcss.config.js
         ]
       }
     ]
