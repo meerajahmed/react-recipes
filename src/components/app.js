@@ -1,35 +1,39 @@
-import React, {Component} from "react";
-import favicon from "../favicon.png";
-import Header from "./header";
-import RecipeList from "./recipe-list";
-import RecipeDetail from "./recipe-detail";
+import React, { Component } from 'react';
+import Header from './header';
+import RecipeList from './recipe-list';
+import RecipeDetail from './recipe-detail';
 
 class App extends Component {
-
   state = {
     recipes: [],
-    recipeDetails: null
+    recipeDetails: null,
   };
 
   componentDidMount() {
     fetch(`${API_URL}/v1/recipes`)
       .then(response => response.json())
-      .then(recipes => this.setState(() => ({recipes})))
+      .then(recipes => this.setState(() => ({ recipes })));
   }
 
+  onClickHandler = (id) => {
+    fetch(`${API_URL}/v1/recipes/${id}`)
+      .then(response => response.json())
+      .then(recipeDetails => this.setState(() => ({ recipeDetails })));
+  };
+
   render() {
+    const { recipes, recipeDetails } = this.state;
     return (
       <div>
-        <img src={favicon} alt="react recipes logo"/>
         <Header />
         <main className="flex px4">
           <RecipeList
-            recipes={this.state.recipes}
+            recipes={recipes}
             onClickHandler={this.onClickHandler}
             style={{ flex: 3 }}
           />
-          <RecipeDetail 
-            recipeDetails={this.state.recipeDetails}
+          <RecipeDetail
+            recipeDetails={recipeDetails}
             className="ml4"
             style={{ flex: 5 }}
           />
@@ -37,13 +41,6 @@ class App extends Component {
       </div>
     );
   }
-
-  onClickHandler = (id) => {
-    fetch(`${API_URL}/v1/recipes/${id}`)
-      .then(response => response.json())
-      .then(recipeDetails => this.setState(() => ({recipeDetails})))
-  };
-
 }
 
 export default App;
