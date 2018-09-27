@@ -40,6 +40,7 @@
     "basscss": "^8.0.10",
     "basscss-background-colors": "^2.1.0",
     "basscss-colors": "^2.2.0",
+    "classnames": "^2.2.6",
     "dotenv": "^6.0.0",
     "file-loader": "^2.0.0",
     "postcss": "^7.0.2",
