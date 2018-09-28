@@ -22,11 +22,18 @@ class App extends Component {
       <div>
         <img src={favicon} alt="react recipes logo"/>
         <Header />
-        <RecipeList
-          recipes={this.state.recipes}
-          onClickHandler={this.onClickHandler}
-        />
-        <RecipeDetail recipeDetails={this.state.recipeDetails}/>
+        <main className="flex px4">
+          <RecipeList
+            recipes={this.state.recipes}
+            onClickHandler={this.onClickHandler}
+            style={{ flex: 3 }}
+          />
+          <RecipeDetail 
+            recipeDetails={this.state.recipeDetails}
+            className="ml4"
+            style={{ flex: 5 }}
+          />
+        </main>
       </div>
     );
   }
