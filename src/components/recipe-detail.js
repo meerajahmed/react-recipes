@@ -1,22 +1,31 @@
 import React from "react";
 import recipe from "../favicon.png";
+import classNames from 'classnames';
 
 const RecipeDetail = (props) => {
 
   if (!props.recipeDetails) {
     return (
-      <p>Please select a recipe to see details</p>
+      <p 
+        style={props.style}
+        className={classNames("h3 p2 bg-white italic center", props.className)}
+        >
+        Please select a recipe to see details
+      </p>
     );
   }
 
   const {name, category, calories, image, ingredients, steps} = props.recipeDetails;
 
   return (
-    <div>
+    <div 
+      style={props.style}
+      className={classNames("p2 bg-white", props.className)}
+      >
       Recipe Detail
-      <img src={image} alt={name}/>
+      <h2 className="h2">{name}</h2>
+      <img src={image} alt={name} className="fit"/>
       <div>
-        <span>{name}</span>
         <span>{category}</span>
         <span>{calories} cal</span>
       </div>
