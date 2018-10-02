@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './header';
 import RecipeList from './recipe-list';
 import RecipeDetail from './recipe-detail';
 
